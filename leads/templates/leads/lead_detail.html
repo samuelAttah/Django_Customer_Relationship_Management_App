@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <button><a href="{% url 'leads:lead-list' %}">Go Back</a></button>
+    <h2>This is a list of our Leads</h2>
+    <p>The name of our lead is {{lead.first_name}}</p>
+    <p>This Lead is {{lead.age}} years old</p>
+    <p>The agent responsible for this lead is {{lead.agent}}</p>
+    <button><a href="{% url 'leads:lead-update' lead.pk %}">Update Lead</a></button>
+    <hr/>
+    <button><a href="{% url 'leads:lead-delete' lead.pk %}">Delete Lead</a></button>
+{% endblock content %}
